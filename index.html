@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="calc">
+                <div class="display">
+                    <h1 id="display"></h1>
+                </div>
+                <div class="botoes">
+                    <div class="botao limpar" onclick="calc('clear')">
+                        <h1>C</h1>
+                    </div>
+                    <div class="botao" onclick="calc('/')">
+                        <h1>/</h1>
+                    </div>
+                    <div class="botao" onclick="calc('*')">
+                        <h1>x</h1>
+                    </div>
+                    <div class="botao" onclick="calc('+')">
+                        <h1>+</h1>
+                    </div>
+                    <div class="botao" onclick="calc(7)">
+                        <h1>7</h1>
+                    </div>
+                    <div class="botao" onclick="calc(8)">
+                        <h1>8</h1>
+                    </div>
+                    <div class="botao" onclick="calc(9)">
+                        <h1>9</h1>
+                    </div>
+                    <div class="botao" onclick="calc(0)">
+                        <h1>0</h1>
+                    </div>
+                    <div class="botao" onclick="calc(4)">
+                        <h1>4</h1>
+                    </div>
+                    <div class="botao" onclick="calc(5)">
+                        <h1>5</h1>
+                    </div>
+                    <div class="botao" onclick="calc(6)">
+                        <h1>6</h1>
+                    </div>
+                    <div class="botao" onclick="calc('-')">
+                        <h1>-</h1>
+                    </div>
+                    <div class="botao" onclick="calc(1)">
+                        <h1>1</h1>
+                    </div>
+                    <div class="botao" onclick="calc(2)">
+                        <h1>2</h1>
+                    </div>
+                    <div class="botao" onclick="calc(3)">
+                        <h1>3</h1>
+                    </div>
+                    <div class="botao igual" onclick="total('total')">
+                        <h1>=</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        function calc(n){
+            var display = document.getElementById("display").innerHTML;
+
+            if(n == "clear"){
+                var display = document.getElementById("display").innerHTML = '';
+            }else{
+
+                var displayNum = document.getElementById("display").innerHTML;
+
+                var num = n;
+                var display = document.getElementById("display").innerHTML = displayNum + num;
+
+            } 
+
+        }
+            function total(){
+
+
+                var calculoTotal = document.getElementById("display").innerHTML;
+                if(calculoTotal == ''){
+                    var display = document.getElementById("display").innerHTML = '';
+                
+                }else{
+                    calculoTotal = eval(calculoTotal);
+                    var display = document.getElementById("display").innerHTML = calculoTotal;
+                }
+            }
+
+    </script>
+
+</html>
